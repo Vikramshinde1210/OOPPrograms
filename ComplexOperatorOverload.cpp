@@ -18,10 +18,18 @@ class Complex
                 cout<<"\nEnter the Imaginary Part: ";
                 in>>c.imgn;
             }
-            friend void operator <<(ostream &out, const Complex &c)
+            void operator <<(ostream &out)
             {
-                out<<c.real;
-                out<<"+i"<<c.imgn<<endl;
+                out<<real;
+                out<<"+i"<<imgn<<endl;
+            }
+            int getReal()
+            {
+                return real;
+            }
+            int getImaginary()
+            {
+                return imgn;
             }
             Complex operator +(Complex);
             Complex operator *(Complex);
@@ -51,9 +59,9 @@ int main()
     cin>>c2;
     cout<<"\nAddition is: ";
     add=c1+c2;
-    cout<<add;
+    add<<cout;
     cout<<"\nMultiplication is: ";
     mul=c1*c2;
-    cout<<mul;
+    mul<<cout;
     return 0;
 }
